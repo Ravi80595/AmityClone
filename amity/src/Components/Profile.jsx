@@ -1,4 +1,4 @@
-import { Box,Flex,Image,Text} from '@chakra-ui/react'
+import { Box,Flex,Image,Text,Input} from '@chakra-ui/react'
 import React, { useState } from 'react'
 import {AiOutlineBell,AiOutlineSetting,AiOutlineAlibaba,AiOutlineWifi} from 'react-icons/ai'
 import {BiSolidDownArrow,BiSolidRightArrow,BiSolidLeftArrow, BiCalendar,BiSolidUser} from 'react-icons/bi'
@@ -16,6 +16,7 @@ import photo2 from '../Images/photo2.png'
 import photo3 from '../Images/photo3.png'
 import photo4 from '../Images/photo4.png'
 import photo5 from '../Images/photo5.png'   
+import photo6 from '../Images/photo6.png'
 import {
     Menu,
     MenuButton,
@@ -25,11 +26,12 @@ import {
     MenuGroup,
     MenuOptionGroup,
     MenuDivider,
-    Button
+    Button,Radio,RadioGroup,Stack
   } from '@chakra-ui/react'
+import { Link } from 'react-router-dom'
 
 const Profile = () => {
-    const [data,setData]=useState(true)
+    const [data,setData]=useState(false)
 
 
 
@@ -37,16 +39,18 @@ return (
 
     <Box>
     <Box>
-        <Flex h={'55px'}>
-            <Box background={'#ff9b10'} w={'15%'}>
-                <Image w={'70%'} m={'auto'} h={'45px'} src='https://s.amizone.net/login-files/amizone-logo.png'/>
+        <Flex h={'55px'} direction={['column','column','row','row']}>
+            <Box background={'#ff9b10'} w={['99%','15%','15%','15%']}>
+                <Link to='/'>
+                <Image w={['30%','70%','70%','70%']} h={'45px'} src='https://s.amizone.net/login-files/amizone-logo.png'/>
+                </Link>
             </Box>
-            <Flex w={'85%'} background={'#0065bb'} justifyContent={'space-between'}>
+            <Flex w={['99%','85%','85%','85%']} direction={['column','column','row','row']} background={'#0065bb'} justifyContent={'space-between'}>
                 <Box>
-                    <Text pl={10} pt={3} fontSize={'20px'} color={'white'}>Amity University Gurugram</Text>
+                    <Text pl={10} pt={3} pb={5} fontSize={'20px'} color={'white'}>Amity University Gurugram</Text>
                 </Box>
-                <Flex>
-                    <Flex mr={5} color={'white'}>  
+                <Flex direction={['column','column','row','row']}>
+                    <Flex mr={5} color={'white'} w={'50%'} m={'auto'}>  
                         <Flex w={'60px'} p={2}  justifyContent={'center'} fontSize={'20px'} pt={5} background={'#525252'} color={'white'}> 
                         <AiOutlineBell/>
                         <Text mt={-1} fontSize={'16px'}>10</Text>
@@ -68,12 +72,12 @@ return (
 
                     <Menu>
                     <MenuButton>
-                    <Flex _hover={{background:'#484876'}} cursor={'pointer'} gap={3} p={2} justifyContent={'space-around'} color='white'> 
+                    <Flex w={'45%'} m={'auto'} _hover={{background:'#484876'}} cursor={'pointer'} gap={3} p={2} justifyContent={'space-around'} color='white'> 
                         <Image borderRadius={350} w={10} src='https://pbs.twimg.com/media/EeUI99bUcAMiRFa.jpg:large'/>
                         <Flex>
                         <Box>
                             <Text textAlign={'left'}>
-                            Mr Ravi 
+                            Ms SIMRAN
                             </Text>
                             <Text fontSize={'10px'}>
                             A578795655
@@ -98,7 +102,7 @@ return (
 
 
 <Flex>
-{data && <Box position={'absolute'} zIndex={99999} w={'65%'} border={'2px solid grey'}>
+{data && <Box zIndex={99999} w={['65%','65%','65%','15%']} border={'2px solid grey'}>
     <Flex color={'#0065bb'} pb={2} pl={2} borderBottom={'1px solid grey'}>
         <Box pt={2}>
         <IoHome/>
@@ -250,7 +254,7 @@ return (
         <Text ml={2} pt={1}>Hostel</Text>
     </Flex>
 </Box> }
-<Box w='85%'>
+<Box w={['99%','85%','85%','85%']} mt={['177px','177px','177px','17px']}>
     <Flex pb={2} pl={2} borderBottom={'1px solid grey'}>
         <Box pt={2}>
         <IoHome/>
@@ -261,26 +265,63 @@ return (
 </Flex>
 
 
-<Box borderRadius={10} border={'1px solid blue'} w={'90%'} m={'auto'} mt={10} >
-    <Flex borderTopRadius={10} justifyContent={'space-between'} p={3} background={'#4693e0'} color={'white'} fontWeight={'600'}>
+<Box borderRadius={10} border={'1px solid blue'} w={['89%','99%','90%','90%']} m={'auto'} mt={10} >
+    <Flex direction={['column','column','row','row']} borderTopRadius={10} justifyContent={'space-between'} p={3} background={'#4693e0'} color={'white'} fontWeight={'600'}>
         <Flex>
             <Box mt={1}>
             <BiSolidUser/>
             </Box>
             <Text>My Profile</Text>
         </Flex>
-        <Flex w={'60%'} justifyContent={'space-around'}>
+        <Flex w={['90%','90%','60%','60%']} justifyContent={'space-around'}>
             <Text>Personal</Text>
             <Text>Educational</Text>
             <Text>Medical</Text>
+            </Flex>
+            <Flex w={['90%','90%','60%','60%']} justifyContent={'space-around'}>
+
             <Text>Family Details</Text>
             <Text>Local Guardian</Text>
             <Text>Bank Details</Text>
         </Flex>
     </Flex>
 
-    <Box>
-
+    <Box p='10px'>
+        <Image src={photo6}/>
+        <Text pt={5} fontSize={'20px'}>Let's start with the basic information</Text>
+        <Flex direction={['column','column','row','row']}>
+        <Flex justifyContent={'center'} pt={5}>
+        <Image w={150} src='https://pbs.twimg.com/media/EeUI99bUcAMiRFa.jpg:large'/>
+        </Flex>
+        <Box pt={10} w='90%' m={'auto'} textAlign={'left'}>
+        <Text pt={2}>Full Name of the Student</Text>
+        <Input variant='filled' placeholder='SIMRAN'/>
+        <Text pt={4}>Date Of Birth</Text>
+        <Input variant='filled' placeholder='16/03/2005'/>
+        <Text pt={4}>Sex</Text>
+        <Input variant='filled' placeholder='F'/>
+        <Text pt={4}>Category</Text>
+        <Input variant='filled' placeholder='GEN'/>
+        <Text pt={4}>Marital Status</Text>
+        <RadioGroup defaultValue='2'>
+        <Stack spacing={5} direction='row'>
+            <Radio colorScheme='blue' value='1'>
+            Yes
+            </Radio>
+            <Radio colorScheme='blue' value='2'>
+            No
+            </Radio>
+        </Stack>
+        </RadioGroup>
+        <Text pt={4}>Nationality</Text>
+        <Input variant='filled' placeholder='Indian'/>
+        <Text pt={4}>Domicile State</Text>
+        <Input variant='filled' placeholder='Haryana'/>
+        </Box>
+        </Flex>
+        <Flex pt={5} justifyContent={'end'} w={'90%'} m={'auto'}>
+            <Button borderRadius={0} background={'#50c250'} color={'white'} p={5}>Next</Button>
+        </Flex>
     </Box>
 
 
@@ -298,6 +339,11 @@ return (
 </Flex>
 
 
+<Box mt={20}>
+    <Text>
+    © Amizone For any technical issue, please write to amizone@amity.edu    
+    </Text>
+</Box>
 
 </Box>
 

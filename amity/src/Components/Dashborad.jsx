@@ -37,14 +37,14 @@ return (
         <Box>
             <Flex h={'55px'} direction={['column','column','row','row']}>
                 <Box background={'#ff9b10'} w={['99%','15%','15%','15%']}>
-                    <Image w={['30%','70%','70%','70%']} m={'auto'} h={'45px'} src='https://s.amizone.net/login-files/amizone-logo.png'/>
+                    <Image w={['30%','70%','70%','70%']} h={'45px'} src='https://s.amizone.net/login-files/amizone-logo.png'/>
                 </Box>
                 <Flex w={['99%','85%','85%','85%']} direction={['column','column','row','row']} background={'#0065bb'} justifyContent={'space-between'}>
                     <Box>
-                        <Text pl={10} pt={3} fontSize={'20px'} color={'white'}>Amity University Gurugram</Text>
+                        <Text pl={10} pt={3} pb={5} fontSize={'20px'} color={'white'}>Amity University Gurugram</Text>
                     </Box>
-                    <Flex>
-                        <Flex mr={5} color={'white'}>  
+                    <Flex direction={['column','column','row','row']}>
+                        <Flex mr={5} color={'white'} w={'50%'} m={'auto'}>  
                             <Flex w={'60px'} p={2}  justifyContent={'center'} fontSize={'20px'} pt={5} background={'#525252'} color={'white'}> 
                             <AiOutlineBell/>
                             <Text mt={-1} fontSize={'16px'}>10</Text>
@@ -58,38 +58,33 @@ return (
                             <Flex w={'50px'} justifyContent={'center'} fontSize={'20px'} pt={5} background={'#c4544c'}>
                             <AiOutlineSetting/>
                             </Flex>
-                        </Flex>
-
- 
-
-
-                        
+                        </Flex>                        
                         <Menu>
                         <MenuButton>
-                        <Flex _hover={{background:'#484876'}} cursor={'pointer'} gap={3} p={2} justifyContent={'space-around'} color='white'> 
-                            <Image borderRadius={350} w={10} src='https://pbs.twimg.com/media/EeUI99bUcAMiRFa.jpg:large'/>
-                            <Flex>
-                            <Box>
-                                <Text textAlign={'left'}>
-                                Mr Ravi 
-                                </Text>
-                                <Text fontSize={'10px'}>
-                                A578795655
-                                </Text>
-                            </Box>
-                            <Box mt={11}>
-                            <BiSolidDownArrow/>
-                            </Box>
-                            </Flex>
+                        <Flex w={'45%'} m={'auto'} _hover={{background:'#484876'}} cursor={'pointer'} gap={3} p={2} justifyContent={'space-around'} color='white'> 
+                        <Image borderRadius={350} w={10} src='https://pbs.twimg.com/media/EeUI99bUcAMiRFa.jpg:large'/>
+                        <Flex>
+                        <Box>
+                            <Text textAlign={'left'}>
+                            Ms simran
+                            </Text>
+                            <Text fontSize={'10px'}>
+                            A578795655
+                            </Text>
+                        </Box>
+                        <Box mt={11}>
+                        <BiSolidDownArrow/>
+                        </Box>
                         </Flex>
-  </MenuButton>
-  <MenuList>
-  <Link to='/profile'>
-    <MenuItem>My Profile</MenuItem></Link>
-    <MenuItem>Change Password</MenuItem>
-    <MenuItem>Logout</MenuItem>
-  </MenuList>
-</Menu>
+                        </Flex>
+                    </MenuButton>
+                    <MenuList>
+                    <Link to='/profile'>
+                        <MenuItem>My Profile</MenuItem></Link>
+                        <MenuItem>Change Password</MenuItem>
+                        <MenuItem>Logout</MenuItem>
+                    </MenuList>
+                    </Menu>
                     </Flex>
                 </Flex>
             </Flex>
@@ -249,7 +244,7 @@ return (
             <Text ml={2} pt={1}>Hostel</Text>
         </Flex>
     </Box> */}
-    <Box w={['99%','85%','85%','85%']} mt={'97px'}>
+    <Box w={['99%','85%','85%','85%']} mt={['177px','177px','177px','17px']}>
         <Flex pb={2} ml={2} borderBottom={'1px solid grey'}>
             <Box pt={2}>
             <IoHome/>
@@ -308,7 +303,7 @@ return (
         </Box>
         <Flex p={3} _hover={{background:'#ececec'}} cursor={'pointer'}>
             <Text marginRight={'20px'} fontSize={'10px'} color={'#0065bb'}>10:26 - 11:20</Text>
-            <Box paddingTop={'7px'}>
+            <Box paddingTop={'7px'} color={'#0065bb'}>
             <BsCircleFill fontSize={'5px'}/>
             </Box>
             <Box marginLeft={'10px'} color={'#c74c78'}>
@@ -325,7 +320,7 @@ return (
             </Box>
         </Flex><Flex p={3} _hover={{background:'#ececec'}} cursor={'pointer'}>
             <Text marginRight={'20px'} fontSize={'10px'} color={'#0065bb'}>10:26 - 11:20</Text>
-            <Box paddingTop={'7px'}>
+            <Box paddingTop={'7px'} color={'#0065bb'}>
             <BsCircleFill fontSize={'5px'}/>
             </Box>
             <Box marginLeft={'10px'} color={'#c74c78'}>
@@ -343,7 +338,7 @@ return (
         </Flex>
         <Flex p={3} _hover={{background:'#ececec'}} cursor={'pointer'}>
             <Text marginRight={'20px'} fontSize={'10px'} color={'#0065bb'}>10:26 - 11:20</Text>
-            <Box paddingTop={'7px'}>
+            <Box paddingTop={'7px'} color={'#0065bb'}>
             <BsCircleFill fontSize={'5px'}/>
             </Box>
             <Box marginLeft={'10px'} color={'#c74c78'}>
@@ -360,7 +355,7 @@ return (
             </Box>
         </Flex><Flex p={3} _hover={{background:'#ececec'}} cursor={'pointer'}>
             <Text marginRight={'20px'} fontSize={'10px'} color={'#0065bb'}>10:26 - 11:20</Text>
-            <Box paddingTop={'7px'}>
+            <Box paddingTop={'7px'} color={'#0065bb'}>
             <BsCircleFill fontSize={'5px'}/>
             </Box>
             <Box marginLeft={'10px'} color={'#c74c78'}>
@@ -378,7 +373,7 @@ return (
         </Flex>
         <Flex p={3} _hover={{background:'#ececec'}} cursor={'pointer'}>
             <Text marginRight={'20px'} fontSize={'10px'} color={'#0065bb'}>10:26 - 11:20</Text>
-            <Box paddingTop={'7px'}>
+            <Box paddingTop={'7px'} color={'#0065bb'}>
             <BsCircleFill fontSize={'5px'}/>
             </Box>
             <Box marginLeft={'10px'} color={'#c74c78'}>
