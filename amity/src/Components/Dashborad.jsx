@@ -13,6 +13,21 @@ import {LiaCcMastercard} from 'react-icons/lia'
 import photo1 from '../Images/photo1.png'
 import './Dashboard.css'
 import photo2 from '../Images/photo2.png'
+import photo3 from '../Images/photo3.png'
+import photo4 from '../Images/photo4.png'
+import photo5 from '../Images/photo5.png'   
+import {
+    Menu,
+    MenuButton,
+    MenuList,
+    MenuItem,
+    MenuItemOption,
+    MenuGroup,
+    MenuOptionGroup,
+    MenuDivider,
+    Button
+  } from '@chakra-ui/react'
+  import { Link } from 'react-router-dom'
 
 const Dashborad = () => {
 
@@ -20,11 +35,11 @@ const Dashborad = () => {
 return (
     <Box>
         <Box>
-            <Flex h={'55px'}>
-                <Box background={'#ff9b10'} w={'15%'}>
-                    <Image w={'70%'} m={'auto'} h={'45px'} src='https://s.amizone.net/login-files/amizone-logo.png'/>
+            <Flex h={'55px'} direction={['column','column','row','row']}>
+                <Box background={'#ff9b10'} w={['99%','15%','15%','15%']}>
+                    <Image w={['30%','70%','70%','70%']} m={'auto'} h={'45px'} src='https://s.amizone.net/login-files/amizone-logo.png'/>
                 </Box>
-                <Flex w={'85%'} background={'#0065bb'} justifyContent={'space-between'}>
+                <Flex w={['99%','85%','85%','85%']} direction={['column','column','row','row']} background={'#0065bb'} justifyContent={'space-between'}>
                     <Box>
                         <Text pl={10} pt={3} fontSize={'20px'} color={'white'}>Amity University Gurugram</Text>
                     </Box>
@@ -44,14 +59,37 @@ return (
                             <AiOutlineSetting/>
                             </Flex>
                         </Flex>
-                        <Flex p={2} justifyContent={'space-around'}> 
+
+ 
+
+
+                        
+                        <Menu>
+                        <MenuButton>
+                        <Flex _hover={{background:'#484876'}} cursor={'pointer'} gap={3} p={2} justifyContent={'space-around'} color='white'> 
                             <Image borderRadius={350} w={10} src='https://pbs.twimg.com/media/EeUI99bUcAMiRFa.jpg:large'/>
+                            <Flex>
                             <Box>
-                                Ms Simran <br />
-                                A5787956
+                                <Text textAlign={'left'}>
+                                Mr Ravi 
+                                </Text>
+                                <Text fontSize={'10px'}>
+                                A578795655
+                                </Text>
                             </Box>
-                            <BiSolidDownArrow mt={5}/>
+                            <Box mt={11}>
+                            <BiSolidDownArrow/>
+                            </Box>
+                            </Flex>
                         </Flex>
+  </MenuButton>
+  <MenuList>
+  <Link to='/profile'>
+    <MenuItem>My Profile</MenuItem></Link>
+    <MenuItem>Change Password</MenuItem>
+    <MenuItem>Logout</MenuItem>
+  </MenuList>
+</Menu>
                     </Flex>
                 </Flex>
             </Flex>
@@ -59,7 +97,7 @@ return (
 
 
 <Flex>
-    <Box w={'15%'} border={'2px solid grey'}>
+    {/* <Box w={'15%'} border={'2px solid grey'}>
         <Flex color={'#0065bb'} pb={2} pl={2} borderBottom={'1px solid grey'}>
             <Box pt={2}>
             <IoHome/>
@@ -210,8 +248,8 @@ return (
             </Box>
             <Text ml={2} pt={1}>Hostel</Text>
         </Flex>
-    </Box>
-    <Box w='85%'>
+    </Box> */}
+    <Box w={['99%','85%','85%','85%']} mt={'97px'}>
         <Flex pb={2} ml={2} borderBottom={'1px solid grey'}>
             <Box pt={2}>
             <IoHome/>
@@ -222,7 +260,7 @@ return (
         </Flex>
 
 
-        <Flex w={'90%'} m={'auto'} mt={10} justifyContent={'space-around'}>  
+<Flex w={['79%','99%','90%','90%']} m={'auto'} gap={['30px','30px','0px','0px']} mt={10} justifyContent={'space-around'} direction={['column','column','row','row']}>  
         <Box h={150} w={'270px'} background={'#77dcc0'} pt={2} borderTopRightRadius={5} borderBottomLeftRadius={5}>
             <Image src={photo1}/>
         </Box>
@@ -243,8 +281,8 @@ return (
         </Box>
     </Flex>
 
-<Flex w={'95%'} justifyContent={'space-between'} m={'auto'} mt={10}>
-    <Box w={'49%'} border={'1px solid #0065bb'} borderRadius={5}>
+<Flex w={'95%'} justifyContent={'space-between'} gap={['30px','30px','0px','0px']} m={'auto'} mt={10} direction={['column','column','row','row']}>
+    <Box w={['99%','99%','49%','49%']} border={'1px solid #0065bb'} borderRadius={5}>
         <Box background={'#ececec'} p={4} fontSize={'21px'} fontWeight={'600'} pt={2} borderBottom={'1px solid grey'}>
         <Text textAlign={'left'}>My Classes</Text>
         </Box>
@@ -259,108 +297,106 @@ return (
                 <BiCalendar/>
             </Box>
             <Box>
-                <Text ml={'175px'} fontSize={'18px'} fontWeight={'600'}>
+                <Text ml={['15px','15px','175px','175px']} fontSize={'18px'} fontWeight={'600'}>
                     September 13, 2023
                 </Text>
             </Box>
         </Flex>
-        <Box border={'1px solid grey'} m={5} mt={1}>
-            <Box borderBottom={'1px solid grey'}>
-            <Text m={3} fontWeight={'600'} fontSize={'18px'} textAlign={'left'}>Wednesday</Text>
-            </Box>
-            <Flex p={3} _hover={{background:'#ececec'}} cursor={'pointer'}>
-                <Text marginRight={'20px'} color={'#0065bb'}>10:26 - 11:20</Text>
-                <Box paddingTop={'7px'}>
-                <BsCircleFill fontSize={'15px'}/>
-                </Box>
-                <Box marginLeft={'10px'} color={'#c74c78'}>
-                    <Flex gap={'5px'}>
-                    <FaBook/>
-                    <Text fontSize={'12px'}> LAW2108 BUSINESS ORGANIZATION & MANAGEMENT</Text>
-                    </Flex>
-                    <Flex gap={'5px'} color={'#0065bb'}>
-                    <BiSolidUser/>
-                    <Text fontSize={'12px'}>Dr Minakshi Soni [25245] (B-215)</Text>
-                    </Flex>
-                </Box>
-                <Box>
-                </Box>
-            </Flex>
-            <Flex p={3} _hover={{background:'#ececec'}} cursor={'pointer'}>
-                <Text marginRight={'20px'} color={'#0065bb'}>10:26 - 11:20</Text>
-                <Box paddingTop={'7px'}>
-                <BsCircleFill fontSize={'15px'}/>
-                </Box>
-                <Box marginLeft={'10px'} color={'#c74c78'}>
-                    <Flex gap={'5px'}>
-                    <FaBook/>
-                    <Text fontSize={'12px'}> LAW2108 BUSINESS ORGANIZATION & MANAGEMENT</Text>
-                    </Flex>
-                    <Flex gap={'5px'} color={'#0065bb'}>
-                    <BiSolidUser/>
-                    <Text fontSize={'12px'}>Dr Minakshi Soni [25245] (B-215)</Text>
-                    </Flex>
-                </Box>
-                <Box>
-                </Box>
-            </Flex>
-            <Flex p={3} _hover={{background:'#ececec'}} cursor={'pointer'}>
-                <Text marginRight={'20px'} color={'#0065bb'}>10:26 - 11:20</Text>
-                <Box paddingTop={'7px'}>
-                <BsCircleFill fontSize={'15px'}/>
-                </Box>
-                <Box marginLeft={'10px'} color={'#c74c78'}>
-                    <Flex gap={'5px'}>
-                    <FaBook/>
-                    <Text fontSize={'12px'}> LAW2108 BUSINESS ORGANIZATION & MANAGEMENT</Text>
-                    </Flex>
-                    <Flex gap={'5px'} color={'#0065bb'}>
-                    <BiSolidUser/>
-                    <Text fontSize={'12px'}>Dr Minakshi Soni [25245] (B-215)</Text>
-                    </Flex>
-                </Box>
-                <Box>
-                </Box>
-            </Flex>
-            <Flex p={3} _hover={{background:'#ececec'}} cursor={'pointer'}>
-                <Text marginRight={'20px'} color={'#0065bb'}>10:26 - 11:20</Text>
-                <Box paddingTop={'7px'}>
-                <BsCircleFill fontSize={'15px'}/>
-                </Box>
-                <Box marginLeft={'10px'} color={'#c74c78'}>
-                    <Flex gap={'5px'}>
-                    <FaBook/>
-                    <Text fontSize={'12px'}> LAW2108 BUSINESS ORGANIZATION & MANAGEMENT</Text>
-                    </Flex>
-                    <Flex gap={'5px'} color={'#0065bb'}>
-                    <BiSolidUser/>
-                    <Text fontSize={'12px'}>Dr Minakshi Soni [25245] (B-215)</Text>
-                    </Flex>
-                </Box>
-                <Box>
-                </Box>
-            </Flex>
-            <Flex p={3} _hover={{background:'#ececec'}} cursor={'pointer'}>
-                <Text marginRight={'20px'} color={'#0065bb'}>10:26 - 11:20</Text>
-                <Box paddingTop={'7px'}>
-                <BsCircleFill fontSize={'15px'}/>
-                </Box>
-                <Box marginLeft={'10px'} color={'#c74c78'}>
-                    <Flex gap={'5px'}>
-                    <FaBook/>
-                    <Text fontSize={'12px'}> LAW2108 BUSINESS ORGANIZATION & MANAGEMENT</Text>
-                    </Flex>
-                    <Flex gap={'5px'} color={'#0065bb'}>
-                    <BiSolidUser/>
-                    <Text fontSize={'12px'}>Dr Minakshi Soni [25245] (B-215)</Text>
-                    </Flex>
-                </Box>
-                <Box>
-                </Box>
-            </Flex>
+    <Box border={'1px solid grey'} m={5} mt={1}>
+        <Box borderBottom={'1px solid grey'}>
+        <Text m={3} fontWeight={'600'} fontSize={'18px'} textAlign={'left'}>Wednesday</Text>
         </Box>
+        <Flex p={3} _hover={{background:'#ececec'}} cursor={'pointer'}>
+            <Text marginRight={'20px'} fontSize={'10px'} color={'#0065bb'}>10:26 - 11:20</Text>
+            <Box paddingTop={'7px'}>
+            <BsCircleFill fontSize={'5px'}/>
+            </Box>
+            <Box marginLeft={'10px'} color={'#c74c78'}>
+                <Flex gap={'5px'}>
+                <FaBook/>
+                <Text fontSize={'10px'} textAlign={'left'}> LAW2108 BUSINESS ORGANIZATION & MANAGEMENT</Text>
+                </Flex>
+                <Flex gap={'5px'} color={'#0065bb'}>
+                <BiSolidUser/>
+                <Text fontSize={'10px'}>Dr Minakshi Soni [25245] (B-215)</Text>
+                </Flex>
+            </Box>
+            <Box>
+            </Box>
+        </Flex><Flex p={3} _hover={{background:'#ececec'}} cursor={'pointer'}>
+            <Text marginRight={'20px'} fontSize={'10px'} color={'#0065bb'}>10:26 - 11:20</Text>
+            <Box paddingTop={'7px'}>
+            <BsCircleFill fontSize={'5px'}/>
+            </Box>
+            <Box marginLeft={'10px'} color={'#c74c78'}>
+                <Flex gap={'5px'}>
+                <FaBook/>
+                <Text fontSize={'10px'} textAlign={'left'}> LAW2108 BUSINESS ORGANIZATION & MANAGEMENT</Text>
+                </Flex>
+                <Flex gap={'5px'} color={'#0065bb'}>
+                <BiSolidUser/>
+                <Text fontSize={'10px'}>Dr Minakshi Soni [25245] (B-215)</Text>
+                </Flex>
+            </Box>
+            <Box>
+            </Box>
+        </Flex>
+        <Flex p={3} _hover={{background:'#ececec'}} cursor={'pointer'}>
+            <Text marginRight={'20px'} fontSize={'10px'} color={'#0065bb'}>10:26 - 11:20</Text>
+            <Box paddingTop={'7px'}>
+            <BsCircleFill fontSize={'5px'}/>
+            </Box>
+            <Box marginLeft={'10px'} color={'#c74c78'}>
+                <Flex gap={'5px'}>
+                <FaBook/>
+                <Text fontSize={'10px'} textAlign={'left'}> LAW2108 BUSINESS ORGANIZATION & MANAGEMENT</Text>
+                </Flex>
+                <Flex gap={'5px'} color={'#0065bb'}>
+                <BiSolidUser/>
+                <Text fontSize={'10px'}>Dr Minakshi Soni [25245] (B-215)</Text>
+                </Flex>
+            </Box>
+            <Box>
+            </Box>
+        </Flex><Flex p={3} _hover={{background:'#ececec'}} cursor={'pointer'}>
+            <Text marginRight={'20px'} fontSize={'10px'} color={'#0065bb'}>10:26 - 11:20</Text>
+            <Box paddingTop={'7px'}>
+            <BsCircleFill fontSize={'5px'}/>
+            </Box>
+            <Box marginLeft={'10px'} color={'#c74c78'}>
+                <Flex gap={'5px'}>
+                <FaBook/>
+                <Text fontSize={'10px'} textAlign={'left'}> LAW2108 BUSINESS ORGANIZATION & MANAGEMENT</Text>
+                </Flex>
+                <Flex gap={'5px'} color={'#0065bb'}>
+                <BiSolidUser/>
+                <Text fontSize={'10px'}>Dr Minakshi Soni [25245] (B-215)</Text>
+                </Flex>
+            </Box>
+            <Box>
+            </Box>
+        </Flex>
+        <Flex p={3} _hover={{background:'#ececec'}} cursor={'pointer'}>
+            <Text marginRight={'20px'} fontSize={'10px'} color={'#0065bb'}>10:26 - 11:20</Text>
+            <Box paddingTop={'7px'}>
+            <BsCircleFill fontSize={'5px'}/>
+            </Box>
+            <Box marginLeft={'10px'} color={'#c74c78'}>
+                <Flex gap={'5px'}>
+                <FaBook/>
+                <Text fontSize={'10px'} textAlign={'left'}> LAW2108 BUSINESS ORGANIZATION & MANAGEMENT</Text>
+                </Flex>
+                <Flex gap={'5px'} color={'#0065bb'}>
+                <BiSolidUser/>
+                <Text fontSize={'10px'}>Dr Minakshi Soni [25245] (B-215)</Text>
+                </Flex>
+            </Box>
+            <Box>
+            </Box>
+        </Flex>
     </Box>
-    <Box w={'49%'} border={'1px solid #0065bb'}>
+    </Box>
+    <Box w={['99%','99%','49%','49%']} border={'1px solid #0065bb'}>
     <Box background={'#ececec'} p={4} fontSize={'21px'} fontWeight={'600'} pt={2} borderBottom={'1px solid grey'}>
         <Text textAlign={'left'}>My Attendance
 </Text>
@@ -370,16 +406,15 @@ return (
             <Image borderBottom={'1px solid grey'} src={photo2}/>
             </Box>
             <Box>
-            <Image src={photo2}/>
+            <Image src={photo3}/>
             </Box>
-            <Image src={photo2}/>
-            <Image src={photo2}/>
+            <Image src={photo4}/>
+            <Image src={photo5}/>
             <Image src={photo2}/>
 
         </Box>
     </Box>  
 </Flex>
-
     </Box>
 </Flex>
  
