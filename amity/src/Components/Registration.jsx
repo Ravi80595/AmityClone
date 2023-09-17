@@ -1,4 +1,4 @@
-import { Box,Flex,Image,Text} from '@chakra-ui/react'
+import { Box,Flex,Image,Text, useDisclosure} from '@chakra-ui/react'
 import React, { useState } from 'react'
 import {AiOutlineBell,AiOutlineSetting,AiOutlineAlibaba,AiOutlineWifi} from 'react-icons/ai'
 import {BiSolidDownArrow,BiSolidRightArrow,BiSolidLeftArrow, BiCalendar,BiSolidUser, BiPrinter} from 'react-icons/bi'
@@ -17,6 +17,10 @@ import photo3 from '../Images/photo3.png'
 import photo4 from '../Images/photo4.png'
 import photo5 from '../Images/photo5.png'  
 import photo7 from '../Images/photo7.png' 
+import photo8 from '../Images/photo8.jpg'
+import photo9 from '../Images/photo9.jpg'
+import photo10 from '../Images/photo10.jpg'
+import photo11 from '../Images/photo11.jpg'
 import {
     Menu,
     MenuButton,
@@ -29,10 +33,23 @@ import {
     Button
   } from '@chakra-ui/react'
   import { Link } from 'react-router-dom'
+  import {
+    Modal,
+    ModalOverlay,
+    ModalContent,
+    ModalHeader,
+    ModalFooter,
+    ModalBody,
+    ModalCloseButton,
+  } from '@chakra-ui/react'
+
+
+
 
 const Registration = () => {
 
 const [data,setData]=useState(true)
+  const { isOpen, onOpen, onClose } = useDisclosure()
 
 const handleClick=()=>{
     setData(!data)
@@ -177,12 +194,14 @@ return (
         </Box>
         <Text ml={2} pt={1}>IAD</Text>
     </Flex>
+    <Link to='/id'>
     <Flex className='tab' pb={2} pl={2} borderBottom={'1px solid grey'}>
         <Box pt={2}>
         <BiSolidRightArrow/>
         </Box>
         <Text ml={2} pt={1}>ID Card</Text>
     </Flex>
+    </Link>
     <Flex className='tab' pb={2} pl={2} borderBottom={'1px solid grey'}>
         <Box pt={2}>
         <FaRegComment/>
@@ -278,7 +297,7 @@ return (
             <Text w={'75%'} fontSize={'14px'} textAlign={'left'}>Profile Entry Form (Registration-cum-Enrollment Form)</Text>
             <Flex borderRadius={'15px'} color={'white'} background={'#ffb000'} h={'20px'} p={'2px'}>
                 <BiPrinter/>
-                <Text fontSize={'10px'} textAlign={'left'}>Profile Entry</Text>
+                <Text  onClick={onOpen} fontSize={'10px'} textAlign={'left'}>Profile Entry</Text>
             </Flex>
         </Flex>
     </Box>
@@ -349,7 +368,27 @@ return (
     </Text>
 </Box>
 
+<Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent>
+          {/* <ModalHeader>REGISTRATION FORM</ModalHeader> */}
+          <ModalCloseButton />
+          <ModalBody>
+            {/* <Lorem count={2} /> */}
+            <Image src={photo8}/>
+            <Image src={photo9}/>
+            <Image src={photo10}/>
+            <Image src={photo11}/>
+          </ModalBody>
 
+          <ModalFooter>
+            <Button colorScheme='blue' mr={3} onClick={onClose}>
+              Print
+            </Button>
+            {/* <Button variant='ghost'>Secondary Action</Button> */}
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
 </Box>
   )
 }

@@ -182,12 +182,14 @@ return (
         </Box>
         <Text ml={2} pt={1}>IAD</Text>
     </Flex>
+    <Link to='/id'>
     <Flex className='tab' pb={2} pl={2} borderBottom={'1px solid grey'}>
         <Box pt={2}>
         <BiSolidRightArrow/>
         </Box>
         <Text ml={2} pt={1}>ID Card</Text>
     </Flex>
+    </Link>
     <Flex className='tab' pb={2} pl={2} borderBottom={'1px solid grey'}>
         <Box pt={2}>
         <FaRegComment/>
