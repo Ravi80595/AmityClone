@@ -11,3 +11,42 @@
 }
 
 
+/* Add your desired styles for the hamburger icon here */
+.hamburger {
+    /* display: inline-block; */
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    /* position: relative; */
+    background-color: rgb(0, 162, 255);
+    /* margin: 8px; */
+    /* padding: 5px; */
+    border-radius: 5px;
+    color:white;
+    margin: 8px;
+}
+
+.bar {
+    width: 30px;
+    height: 4px;
+    background-color: white; /* Color of the bars */
+    margin: 6px 3px;
+}
+
+/* Styles for the closed state (default) */
+.bar:nth-child(2) {
+    margin: 6px 3px;
+}
+
+/* Styles for the open state (you can add animations here if needed) */
+.hamburger.open .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 5px);
+}
+
+.hamburger.open .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -5px);
+}

@@ -1,5 +1,5 @@
 import { Box,Flex,Image,Text} from '@chakra-ui/react'
-import React from 'react'
+import React, { useState } from 'react'
 import {AiOutlineBell,AiOutlineSetting,AiOutlineAlibaba,AiOutlineWifi} from 'react-icons/ai'
 import {BiSolidDownArrow,BiSolidRightArrow,BiSolidLeftArrow, BiCalendar,BiSolidUser} from 'react-icons/bi'
 import {IoContractSharp, IoHome} from 'react-icons/io5'
@@ -16,6 +16,7 @@ import photo2 from '../Images/photo2.png'
 import photo3 from '../Images/photo3.png'
 import photo4 from '../Images/photo4.png'
 import photo5 from '../Images/photo5.png'   
+import photo7 from '../Images/photo7.png'
 import {
     Menu,
     MenuButton,
@@ -30,15 +31,26 @@ import {
   import { Link } from 'react-router-dom'
 
 const Dashborad = () => {
+    const [data,setData]=useState(true)
+
+const handleClick=()=>{
+    setData(!data)
+}
+
 
 
 return (
     <Box>
         <Box>
             <Flex h={'55px'} direction={['column','column','row','row']}>
-                <Box background={'#ff9b10'} w={['99%','15%','15%','15%']}>
+                <Flex background={'#ff9b10'} w={['99%','15%','15%','15%']}>
+                <div onClick={handleClick} class="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
                     <Image w={['30%','70%','70%','70%']} h={'45px'} src='https://s.amizone.net/login-files/amizone-logo.png'/>
-                </Box>
+                </Flex>
                 <Flex w={['99%','85%','85%','85%']} direction={['column','column','row','row']} background={'#0065bb'} justifyContent={'space-between'}>
                     <Box>
                         <Text pl={10} pt={3} pb={5} fontSize={'20px'} color={'white'}>Amity University Gurugram</Text>
@@ -62,11 +74,11 @@ return (
                         <Menu>
                         <MenuButton>
                         <Flex w={'45%'} m={'auto'} _hover={{background:'#484876'}} cursor={'pointer'} gap={3} p={2} justifyContent={'space-around'} color='white'> 
-                        <Image borderRadius={350} w={10} src='https://pbs.twimg.com/media/EeUI99bUcAMiRFa.jpg:large'/>
+                        <Image borderRadius={350} w={10} src={photo7}/>
                         <Flex>
                         <Box>
                             <Text textAlign={'left'}>
-                            Ms simran
+                            Mr Pankaj
                             </Text>
                             <Text fontSize={'10px'}>
                             A578795655
@@ -92,8 +104,8 @@ return (
 
 
 <Flex>
-    {/* <Box w={'15%'} border={'2px solid grey'}>
-        <Flex color={'#0065bb'} pb={2} pl={2} borderBottom={'1px solid grey'}>
+{data && <Box position={'absolute'} w={['75%','15%','15%','15%']} border={'2px solid grey'}>
+        <Flex color={'#0065bb'} pb={2} pl={2} borderBottom={'1px solid grey'} background={'white'}>
             <Box pt={2}>
             <IoHome/>
             </Box>
@@ -111,12 +123,14 @@ return (
             </Box>
             <Text ml={2} pt={1}>My Courses</Text>
         </Flex>
+        <Link to='/registration'>
         <Flex className='tab' pb={2} pl={2} borderBottom={'1px solid grey'}>
             <Box pt={2}>
             <FiEdit/>
             </Box>
             <Text ml={2} pt={1}>Regisgtration</Text>
         </Flex>
+        </Link>
         <Flex className='tab' pb={2} pl={2} borderBottom={'1px solid grey'}>
             <Box pt={2}>
             <FiEdit/>
@@ -243,7 +257,7 @@ return (
             </Box>
             <Text ml={2} pt={1}>Hostel</Text>
         </Flex>
-    </Box> */}
+    </Box> }
     <Box w={['99%','85%','85%','85%']} mt={['177px','177px','177px','17px']}>
         <Flex pb={2} ml={2} borderBottom={'1px solid grey'}>
             <Box pt={2}>
@@ -319,14 +333,14 @@ return (
             <Box>
             </Box>
         </Flex><Flex p={3} _hover={{background:'#ececec'}} cursor={'pointer'}>
-            <Text marginRight={'20px'} fontSize={'10px'} color={'#0065bb'}>10:26 - 11:20</Text>
+            <Text marginRight={'20px'} fontSize={'10px'} color={'#0065bb'}>11:21 - 12:20</Text>
             <Box paddingTop={'7px'} color={'#0065bb'}>
             <BsCircleFill fontSize={'5px'}/>
             </Box>
             <Box marginLeft={'10px'} color={'#c74c78'}>
                 <Flex gap={'5px'}>
                 <FaBook/>
-                <Text fontSize={'10px'} textAlign={'left'}> LAW2108 BUSINESS ORGANIZATION & MANAGEMENT</Text>
+                <Text fontSize={'10px'} textAlign={'left'}> LAW2110 FINANCIAL ACCOUNTING</Text>
                 </Flex>
                 <Flex gap={'5px'} color={'#0065bb'}>
                 <BiSolidUser/>
@@ -337,18 +351,18 @@ return (
             </Box>
         </Flex>
         <Flex p={3} _hover={{background:'#ececec'}} cursor={'pointer'}>
-            <Text marginRight={'20px'} fontSize={'10px'} color={'#0065bb'}>10:26 - 11:20</Text>
+            <Text marginRight={'20px'} fontSize={'10px'} color={'#0065bb'}>12:16 - 13:10</Text>
             <Box paddingTop={'7px'} color={'#0065bb'}>
             <BsCircleFill fontSize={'5px'}/>
             </Box>
             <Box marginLeft={'10px'} color={'#c74c78'}>
                 <Flex gap={'5px'}>
                 <FaBook/>
-                <Text fontSize={'10px'} textAlign={'left'}> LAW2108 BUSINESS ORGANIZATION & MANAGEMENT</Text>
+                <Text fontSize={'10px'} textAlign={'left'}> LAW2105 LAW OF CONTRACT-1</Text>
                 </Flex>
                 <Flex gap={'5px'} color={'#0065bb'}>
                 <BiSolidUser/>
-                <Text fontSize={'10px'}>Dr Minakshi Soni [25245] (B-215)</Text>
+                <Text fontSize={'10px'}>Dr Archna Sehrawat Dhawan [25245] (B-215)</Text>
                 </Flex>
             </Box>
             <Box>
@@ -365,7 +379,7 @@ return (
                 </Flex>
                 <Flex gap={'5px'} color={'#0065bb'}>
                 <BiSolidUser/>
-                <Text fontSize={'10px'}>Dr Minakshi Soni [25245] (B-215)</Text>
+                <Text fontSize={'10px'} textAlign={'left'}>Dr Minakshi Soni [25245] (B-215)</Text>
                 </Flex>
             </Box>
             <Box>
