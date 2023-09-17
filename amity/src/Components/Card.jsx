@@ -18,6 +18,7 @@ import photo4 from '../Images/photo4.png'
 import photo5 from '../Images/photo5.png'   
 import photo7 from '../Images/photo7.png'
 import photo12 from '../Images/photo12.png'
+import photo13 from '../Images/photo13.png'
 import {
     Menu,
     MenuButton,
@@ -291,10 +292,10 @@ return(
                 <Text>Issuing Authority</Text>
             </Box>
             <Box w={'40%'}>
-                <Text fontFamily={'cursive'}>
+                {/* <Text fontFamily={'cursive'}>
                     Pankaj
-                </Text>
-                {/* <Image w={'80px'} src='https://scontent.xx.fbcdn.net/v/t1.15752-9/377777225_691175522464089_551985357314431125_n.png?_nc_cat=101&ccb=1-7&_nc_sid=aee45a&_nc_ohc=tvNrPpaQO8sAX9XquBf&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdQQ684nTT1VGevABFdVPraD0TL_VjBxSIRvWAq4VSYDlA&oe=652E7779'/> */}
+                </Text> */}
+                <Image w={'80px'} src={photo13}/>
                 <Text>Holder's Signature</Text>
             </Box>
         </Flex>
