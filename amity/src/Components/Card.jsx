@@ -276,7 +276,7 @@ return(
     <Box background={'#0065bb'} color={'white'} textAlign={'left'} pl={'10px'}>
         <Text>ID Card View</Text>
     </Box>
-    <Box w={'80%'}  background={'#aeffae'} border={'2px solid grey'}>
+    <Box w={'80%'}  background={'#ff9b10'} border={'2px solid grey'}>
         <Image src='https://cuet-2023-public.s3.ap-south-1.amazonaws.com/site-admin23/ac61e5f2feb4b0f534b1bc4794cdc772cf1679dca69cc262d5c710ef24b321a83/Amity%20University%20Gurugram1677844328_upload_logo.jpg'/>
         <Box> 
             <Flex justifyContent={'center'}>
@@ -284,7 +284,7 @@ return(
             </Flex>
             <Text mt={'20px'}>Pankaj</Text>
             <Text>BBA</Text>
-            <Text>2023-2028</Text>
+            <Text>2023-2026</Text>
         </Box>
         <Flex mt={'30px'} justifyContent={'space-around'}>
             <Box w={'40%'}>
